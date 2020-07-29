@@ -1,0 +1,3 @@
+Menampilkan Port yang terpakai : sudo lsof -i -P -n
+Menyaring port yang dimaksud (3000) : sudo lsof -i -P -n | grep 3000
+Membunuh Port yang dimaksud : kill -9 3372
