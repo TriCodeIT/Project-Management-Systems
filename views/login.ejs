@@ -52,32 +52,67 @@
 <body class="text-center">
     <form class="form-signin" action="/login" method="POST">
 
-        <img class="mb-4" src="/images/pms.jpg" alt="" width="322" height="222">
+        <div class="card border-dark" style="width: 450px">
+            <div class="card-body">
 
-        <h1 class="h3 mb-3 font-weight-normal">Project Management System</h1>
-            
-            <label for="inputEmail" class="sr-only">Email</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus=""
-                name="email">
-            <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required=""
-                name="password">
+                <img class="mb-4" src="/images/pms.jpg" alt="" width="322" height="222">
 
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
-            </div>
+                <h1 class="h3 mb-3 font-weight-normal">Project Management System</h1>
+                <h1 class="h3 mb-3 font-weight-normal title">Sign In</h1>
 
-            <button class="btn btn-lg btn-secondary btn-block" type="submit">Sign in</button>
+                <label for="inputEmail" class="sr-only">Email</label>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus=""
+                    name="email">
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required=""
+                    name="password">
 
-            <% if (pesanKesalahan.length > 0) { %>
-            <div class="alert alert-danger" role="alert">
-                <%=pesanKesalahan %>
-            </div>
-            <% } %>
-            
-            <p class="mt-5 mb-3 text-muted">©TriCodeIt-2020</p>
+                <div class="checkbox mb-3">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+
+                <button class="btn btn-lg btn-secondary btn-block" type="submit">Sign in</button>
+
+                <% if (pesanKesalahan.length > 0) { %>
+                <div class="alert alert-danger" role="alert">
+                    <%=pesanKesalahan %>
+                </div>
+                <% } %>
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">
+                    Access account
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title title" id="staticBackdropLabel">Access Account</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body text-left">
+                                <strong>Admin</strong> <br>
+                                Email Address &emsp; : tri_165@trimail.com <br>
+                                Password&emsp; &emsp; &emsp;: 5432 <br>
+                                <br>
+                                <strong>User</strong> <br>
+                                Email Address &emsp; : mevi_meila@trimail.com <br>
+                                Password&emsp; &emsp; &emsp;: 9876
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary " data-dismiss="modal">Ok</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="mt-5 mb-3 text-muted">©TriCodeIt-2020</p>
     </form>
 
 
