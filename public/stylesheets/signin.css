@@ -3,6 +3,15 @@ body {
   height: 100%;
 }
 
+.h3{font-size: 23px;}
+.h4{font-size: 17px;}
+
+img {
+  width: 300px;
+  height: 150px;
+  border-radius: 6%;
+}
+
 body {
   display: -ms-flexbox;
   display: flex;
