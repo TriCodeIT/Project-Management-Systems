@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity</title>
+    <!-- <link rel="stylesheet" href=""> -->
+    <% include ../../partials/head %>
+    <style>
+        body {
+            margin-top: 60px;
+            margin-bottom: 80px;
+        }
+    </style>
+    <link rel="stylesheet" href="/stylesheets/sidebar.css">
+</head>
+
+<body>
+    <header>
+        <% include ../../partials/navbar %>
+    </header>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <%_ include ../../partials/sidebar -%>
+
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+                <h1 style="text-align: center;">Activity</h1>
+                <h4 style="text-align: center;">
+
+                    <small class="text-muted">#<%= projectid %> <%=project.name%></small>
+                </h4>
+                <hr>
+                <%activity.forEach(item => {%>
+                <div class="row">
+                    <div class="col-10 offset-1">
+                        <div class="card">
+                            <div class="card-header text-white bg-dark">
+                                <h2 style="text-align: center;"><strong><%= item.dateactivity%></strong></h2>
+                            </div>
+                            <div class="card-body">
+
+                                <h5><%=item.title%></h5>
+                                <hr>
+                                <p><%=item.description%></p>
+                                <p>Done by percentage: from <%=item.olddone%>% updated to <%=item.nowdone%>%</p>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-warning" role="progressbar"
+                                        style="width:<%= parseInt(item.olddone)%>%" aria-valuenow="<%=item.olddone%>"
+                                        aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                    <div class="progress-bar progress-bar-striped bg-info" role="progressbar"
+                                        style="width:<%= parseInt(item.nowdone)%>%" aria-valuenow="<%=item.nowdone%>"
+                                        aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                                <br>
+                                <h5><strong>Author : <%=item.authorname%></strong></h5>
+                                <h4><span class="badge badge-info"><%= item.timeactivity%></span></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <%})%>
+            </main>
+        </div>
+    </div>
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <% include ../../partials/footer %>
+
+</body>
+
+</html>

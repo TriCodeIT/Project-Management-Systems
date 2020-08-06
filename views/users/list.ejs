@@ -2,10 +2,9 @@
 <html>
 
 <head>
-    <title>Dasrboard Users</title>
+    <title>Dashboard Users</title>
     <!-- <link rel="stylesheet" href=""> -->
     <% include ../partials/head %>
-
 </head>
 
 <body>
@@ -15,13 +14,15 @@
 
     <!-- form filter -->
     <div class="container" style="margin-top: 20px">
-        <h1 style="font-family:Georgia, 'Times New Roman', Times, serif">Dasrboard Users</h1>
+        <h1 style="font-family:Georgia, 'Times New Roman', Times, serif">Dashboard Users</h1>
         <hr>
+
         <div class="container" style="margin-top: 20px ">
             <div class="card bg-light mb-3" style="font-family: initial;">
                 <div class="card-header text-white bg-dark mb-3">
                     <h2 style="font-family:Georgia, 'Times New Roman', Times, serif">Filters</h2>
                 </div>
+
                 <div class="card-body">
                     <form method="GET" id="filterForm">
                         <input type="hidden" name="page" value="1">
@@ -124,26 +125,32 @@
                         </div>
 
                         <div class="container" style="margin-left: 20px;">
-                            <button type="submit" class="btn btn-outline-dark">Search</button>
+                            <button type="submit" class="btn btn-outline-primary">Search</button>
+
                             <a href="/users">
-                                <button type="button" class="btn btn-outline-secondary" id="reset">Reset</button>
+
+                                <button type="button" class="btn btn-outline-info" id="reset">Reset</button>
                             </a>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
+
         <!-- option -->
         <div class="card bg-light mb-3" style="font-family: initial;">
             <div class="card-header">
 
 
                 <div class="container">
+
                     <form action="" method="POST">
+
                         <div class="form-group row">
                             <h2 class="col-sm-4" style="font-family:Georgia, 'Times New Roman', Times, serif">Option
                                 Columns</h2>
                             <div class="col-sm-2" style="margin-top: 10px;">
+
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="cId" name="cId" value="true"
                                         <%= option.Id ? `checked` : `` %>>
@@ -151,6 +158,7 @@
                                         ID
                                     </label>
                                 </div>
+
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="cName" name="cName" value="true"
                                         <%= option.Name ? `checked` : `` %>>
@@ -168,6 +176,7 @@
                                         Position
                                     </label>
                                 </div>
+
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="cEmail" name="cEmail"
                                         value="true" <%= option.Email ? `checked` : `` %>>
@@ -185,6 +194,7 @@
                                         Type Job
                                     </label>
                                 </div>
+
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="cRole" name="cRole" value="true"
                                         <%= option.Role ? `checked` : `` %>>
@@ -203,6 +213,7 @@
                     </form>
                 </div>
             </div>
+
             <!-- list table -->
             <div class="card-body">
                 <div class="container" style="margin-top: 10px">
@@ -219,6 +230,7 @@
                                 <th>Actions</th>
                             </tr>
                         </thead>
+
                         <tbody>
                             <%users.forEach(item =>{%>
                             <tr>
@@ -267,8 +279,10 @@
 
             <div class="form-group row" style="margin-left: 20px;">
                 <div class="col-sm-10">
+
                     <a href="/users/add">
-                        <button class="btn btn-outline-dark">Add User</button>
+                        
+                        <button class="btn btn-outline-primary">Add User</button>
                     </a>
                 </div>
             </div>

@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan'); 
+const fileUpload = require('express-fileupload');
 
 // require password
 // var bcrypt = require('bcrypt');
@@ -16,11 +17,19 @@ var flash = require('connect-flash');
 //Integration Postgree Data Base
 const { Pool } = require('pg')
 
+// const pool = new Pool({
+//   user: 'postgres',
+//   host: 'localhost',
+//   database: 'pmsdb',
+//   password: 'tribay99',
+//   port: 5432,
+// })
+
 const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'pmsdb',
-  password: 'tribay99',
+  user: 'eveoyrsijneqvk',
+  host: 'ec2-35-175-155-248.compute-1.amazonaws.com',
+  database: 'dch8pio4snocvq',
+  password: 'e20479f99ae97f64ff70f4a02b17c3e32e210dbfad5ddde4fc3c22e6133ed57c',
   port: 5432,
 })
 
@@ -31,6 +40,8 @@ var profileRouter = require('./routes/profile') (pool);
 
 
 var app = express();
+
+
 
 /*
 Membuat Crypt Password
@@ -46,11 +57,25 @@ password : $2b$10$/TjdNKWiUuQaIvtMAeN6Rey89qtf8Y3x1IJvdfNRp4BlsjD9kT39a (1234)
 firstname : admin
 lastname : pms
 
+admin pms
+email : tri_165@trimail.com
+password : $2b$10$gBAnipvxRBwI14d0bequCOSSqCVg.gTNkESGMRm7n0YZg3D1.07u. (5432)
+firstname : Tri
+lastname : Sutrisna
+
 user pms
-email : 
+email : userpms@trimail.com
 password : $2b$10$d6K3Bdiu20unZ1lIVvjvGOYvv.jE95Z5ACqntG8Oa2jeE6wwkAeCq (5678)
 firstname : user
 lastname : pmsu
+
+user pms
+email : mevi_meila@trimail.com
+password : $2b$10$7i1vlq4Fp1OQ4TG0tzgNjOzxYB8cSgIfyPRi6EGq6fvMMuWdRTfY2 (9876)
+firstname : Mevi
+lastname : Meila
+
+
 */
 
 // view engine setup
@@ -66,6 +91,7 @@ app.use(session({
   secret: 'tim21',
 }))
 app.use(flash());
+app.use(fileUpload());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
