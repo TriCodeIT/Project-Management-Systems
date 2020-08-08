@@ -11,7 +11,34 @@ Stack Technologies :
 4. NPM (others package)
 5. Bootstrap 4.5 (View)
 
+Acces Acounts :
+
+admin pms
+email : adminpms@trimail.com
+password : 1234
+firstname : admin
+lastname : pms
+
+admin pms
+email : tri_165@trimail.com
+password : 5432
+firstname : Tri
+lastname : Sutrisna
+
+user pms
+email : userpms@trimail.com
+password : 5678
+firstname : user
+lastname : pmsu
+
+user pms
+email : mevi_meila@trimail.com
+password : 9876
+firstname : Mevi
+lastname : Meila
+
 Demo: https://pmstricodeit.herokuapp.com/
+
 
 ![pmslogin](https://user-images.githubusercontent.com/67305098/89707682-aedafe80-d99a-11ea-96e6-fc9922047dd4.jpg)
 
